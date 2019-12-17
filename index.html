@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>English</title>
+	<style type="text/css">
+		#textarea {
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="textarea">
+Favourite, Colour
+	</textarea>
+	<br>
+	<button onclick="update()">Convert</button>
+	<select id='option'>
+		<option>American to British</option>
+		<option selected="true">British to American</option>
+	</select>
+	</body>
+<script type="text/javascript">
+
+function update() {
+	var option = document.getElementById("option").value;
+	var textarea = document.getElementById("textarea");
+	if (option == "British to American") {
+		var toList = Object.keys(britishEnglish);
+		for (var i = 0; i < toList.length; i++) {
+			textarea.value = textarea.value.replace(toList[i], britishEnglish[toList[i]])
+		}
+	}
+}
+
+var britishEnglish = {
+	'colour': 'color',
+	'favourite': 'favorite',
+	'flavour': 'color',
+	'humour': 'humor',
+	'flat':'apartment',
+	'appetizer':'starter',
+	'fringe':'bangs',
+	'hairslide':'barrette',
+	'grill':'broil',
+	'grill':'broiler',
+	'sweets':'candy',
+	'mobile phone':'cell phone',
+	'crisps':'chips',
+	'snakes and ladders':'chutes and ladders',
+	'wardrobe':'closet',
+	'biscuit':'cookie, cracker',
+	'candyfloss':'cotton candy',
+	'anticlockwise':'counter clockwise',
+	'cot':'crib',
+	'nappy':'diaper',
+	'chemist':'drugstore',
+	'aubergine':'eggplant',
+	'primary school':'elementary school',
+	'junior school':'elementary school',
+	'lift':'elevator',
+	'motorway':'expressway, highway',
+	'chips':'French fries',
+	'dustbin':'garbage can',
+	'petrol':'gas, gasoline',
+	'bonnet':'hood',
+	'skipping rope':'jump rope',
+	'number plate':'license plate',
+	'off-licence':'liquor store',
+	'postbox':'mailbox',
+	'oven glove':'oven mitt',
+	'dummy':'pacifier',
+	'trousers':'pants',
+	'tights':'pantyhose',
+	'car park':'parking lot',
+	'parting':'part',
+	'full stop':'period',
+	'public school':'private school',
+	'state school':'public school',
+	'dressing gown':'robe, bathrobe',
+	'shopping trolley':'shopping cart',
+	'pavement':'sidewalk',
+	'sledge':'sled',
+	'trainers':'sneakers',
+	'football':'soccer',
+	'hundreds and thousands':'sprinkles',
+	'pushchair':'stroller',
+	'underground':'subway',
+	'braces':'suspenders',
+	'jumper':'sweater',
+	'takeaway':'takeout',
+	'drawing pin':'thumbtack',
+	'noughts and crosses':'tic-tac-toe',
+	'boot':'trunk (of a car)',
+	'indicator':'turn signal',
+	'vest':'undershirt',
+	'holiday':'vacation',
+	'waistcoat':'vest',
+	'flannel':'washcloth',
+	'postcode':'zip code',
+	'courgette':'zucchini'
+}
+
+//var americanToBritish.reverse();
+</script>
+</html>
