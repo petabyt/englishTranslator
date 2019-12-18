@@ -11,7 +11,7 @@
 </head>
 <body>
 	<textarea id="textarea">
-Favourite, Colour
+My favorite color is red. I like good humour.
 	</textarea>
 	<br>
 	<button onclick="update()">Convert</button>
@@ -25,18 +25,24 @@ Favourite, Colour
 function update() {
 	var option = document.getElementById("option").value;
 	var textarea = document.getElementById("textarea");
+	textarea.value = convert(option, textarea.value);
+}
+
+function convert(option, text) {
 	if (option == "British to American") {
 		var toList = Object.keys(britishEnglish);
 		for (var i = 0; i < toList.length; i++) {
-			textarea.value = textarea.value.replace(toList[i], britishEnglish[toList[i]])
+			var insensitive = new RegExp(toList[i], "i");
+			text = text.replace(insensitive, britishEnglish[toList[i]])
 		}
 	}
+	return text
 }
 
 var britishEnglish = {
 	'colour': 'color',
 	'favourite': 'favorite',
-	'flavour': 'color',
+	'flavour': 'flavor',
 	'humour': 'humor',
 	'flat':'apartment',
 	'appetizer':'starter',
